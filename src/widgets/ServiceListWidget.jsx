@@ -12,6 +12,7 @@ const ServiceListWidget = () => {
         <p
           key={index}
           role="button"
+          aria-label={`Open ${item} menu`}
           className="flex items-center gap-2 font-poppins font-normal text-lg text-black cursor-pointer"
         >
           {item} <ChevronDown className="w-5 h-5 relative top-[1px]" />

@@ -11,17 +11,15 @@ import WhatWeDoSection from "@/sections/WhatWeDoSection";
 import WhyChooseUs from "@/sections/WhyChooseUs";
 import "@/styles/globals.css";
 
+export const metadata = {
+  title: "Home | MxD",
+  description:
+    "We are a creative agency offering top-notch marketing, design, and branding services.",
+};
+
 export default function Home() {
   return (
     <div className="bg-white">
-      <Head>
-        <title>Home | MxD</title>
-        <meta
-          name="description"
-          content="We are a creative agency offering top-notch marketing, design, and branding services."
-        />
-      </Head>
-
       <CreativeAgencySection />
       <HeroSection />
       <WhatWeDoSection />

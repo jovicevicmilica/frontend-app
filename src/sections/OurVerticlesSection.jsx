@@ -7,45 +7,50 @@ import "slick-carousel/slick/slick-theme.css";
 import ArrowButton from "../widgets/ArrowButton";
 import Image from "next/image";
 
-const verticles = [
+const verticals = [
   {
     title: "Direct to Consumer",
-    description: "Vorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "Helping brands connect with customers through performance-driven marketing.",
     image: "/assets/image1.avif",
     bgColor: "bg-gray-200",
     textColor: "text-black",
   },
   {
     title: "B2B Marketing",
-    description: "Vorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "Optimizing lead generation and AI-driven automation for enterprise sales.",
     image: "/assets/image2.avif",
     bgColor: "bg-[#496bef]",
     textColor: "text-white",
   },
   {
     title: "Consumer Services",
-    description: "Vorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "Expanding digital reach through conversion-optimized campaigns.",
     image: "/assets/image3.avif",
     bgColor: "bg-black",
     textColor: "text-white",
   },
   {
-    title: "Lorem Ipsum",
-    description: "Vorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "Retail Growth",
+    description:
+      "Increasing retail sales with personalized customer targeting strategies.",
     image: "/assets/image4.avif",
     bgColor: "bg-white",
     textColor: "text-black",
   },
   {
-    title: "Lorem Ipsum",
-    description: "Vorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "E-commerce Scaling",
+    description: "Scaling online stores with data-driven paid media and SEO.",
     image: "/assets/image5.avif",
     bgColor: "bg-[#D9D9D9]",
     textColor: "text-black",
   },
   {
-    title: "Lorem Ipsum",
-    description: "Vorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "Tech Startups",
+    description:
+      "Accelerating growth for SaaS and tech companies with strategic marketing.",
     image: "/assets/image6.avif",
     bgColor: "bg-[#496BEF]",
     textColor: "text-white",
@@ -55,7 +60,8 @@ const verticles = [
 const OurVerticlesSection = () => {
   const sliderRef = useRef(null);
   return (
-    <div className="w-screen py-16 px-6 lg:px-20 font-[Poppins] relative overflow-hidden">
+    <section className="w-screen py-16 px-6 lg:px-20 font-poppins relative overflow-hidden">
+      {/* ✅ Heading Section */}
       <div className="mb-4 flex flex-col justify-between items-left">
         <header className="max-w-2xl">
           <h2 className="text-4xl font-semibold text-black mb-6">
@@ -67,22 +73,27 @@ const OurVerticlesSection = () => {
             Our team of highly specialized B2B marketing experts — performance
             marketing, search engine optimization, lead generation, conversion
             rate optimization, brand and content ensures that you get the
-            results you want - more revenue.
+            results you want - more revenue. 
           </p>
+          {/* ✅ Accessible Navigation Buttons */}
           <div className="flex gap-4">
             <ArrowButton
               direction="left"
               onClick={() => sliderRef.current?.slickPrev()}
               aria-label="Slide left"
+              tabIndex="0"
             />
             <ArrowButton
               direction="right"
               onClick={() => sliderRef.current?.slickNext()}
               aria-label="Slide right"
+              tabIndex="0"
             />
           </div>
         </div>
       </div>
+
+      {/* ✅ SEO & Accessibility Optimized Slider */}
       <Slider
         ref={sliderRef}
         dots={false}
@@ -109,12 +120,12 @@ const OurVerticlesSection = () => {
         ]}
         className="w-screen"
       >
-        {verticles.map((item, index) => (
+        {verticals.map((item, index) => (
           <div key={index} className="pr-0">
             <div className="rounded-md overflow-hidden">
               <Image
                 src={item.image}
-                alt={item.title}
+                alt={`${item.title} - ${item.description}`}
                 width={500}
                 height={215}
                 className="w-full h-[215px] object-cover"
@@ -123,7 +134,8 @@ const OurVerticlesSection = () => {
               <div
                 className={`w-full h-[170px] ${item.bgColor} ${item.textColor} p-7 flex flex-col justify-between`}
               >
-                <h3 className="text-xl font-medium max-w-[150px]">
+                {/* ✅ Improved H3 Structure for SEO */}
+                <h3 className="text-xl font-medium max-w-[200px]">
                   {item.title}
                 </h3>
                 <p className="text-sm">{item.description}</p>
@@ -132,7 +144,7 @@ const OurVerticlesSection = () => {
           </div>
         ))}
       </Slider>
-    </div>
+    </section>
   );
 };
 

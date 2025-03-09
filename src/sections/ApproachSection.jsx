@@ -9,12 +9,12 @@ export default function ApproachSection() {
       <div className="absolute top-0 right-0 w-[50px] h-full bg-white"></div>
 
       {/* Background Text - Our Approach */}
-      <h1
+      <span
         className="text-[8rem] md:text-[12rem] font-semibold text-white opacity-10 absolute top-0 left-0 right-0 text-center"
         aria-hidden="true"
       >
         Our Approach
-      </h1>
+      </span>
 
       {/* Top Section */}
       <div className="flex flex-col md:flex-row items-start md:items-center justify-center relative mt-16">
@@ -43,10 +43,11 @@ export default function ApproachSection() {
         <div className="relative w-[300px] h-[250px] md:w-[500px] md:h-[350px] ml-auto flex items-end mt-16 md:mt-0">
           <Image
             src="/assets/iceberg-refl.avif"
-            alt="Iceberg representing deep marketing insights"
+            alt="B2B marketing strategy iceberg showcasing deep data-driven insights"
             width={500}
             height={350}
             className="object-cover mix-blend-lighten"
+            loading="lazy"
           />
         </div>
       </div>
@@ -71,6 +72,7 @@ export default function ApproachSection() {
             boxHeight="h-[200px]"
             text="Marketing in today's world is a science. We create your personalized data center that allows you to understand how your marketing efforts translate into revenue."
             buttonText="Data Driving B2B Marketing"
+            loading="lazy"
           />
         </div>
       </div>

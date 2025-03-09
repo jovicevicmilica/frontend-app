@@ -12,14 +12,17 @@ export default function CreativeAgencySection() {
 
   return (
     <div className="w-full">
-      {/* Header Section */}
-      <header className="box-border flex items-start pt-8 justify-between px-6 md:px-12 lg:px-10 h-[135px] bg-white shadow-md">
-        {/* Left Side (Logo) */}
+      {/* ✅ Header Section with Semantic Roles */}
+      <header
+        role="banner"
+        className="box-border flex items-start pt-8 justify-between px-6 md:px-12 lg:px-10 h-[135px] bg-white shadow-md"
+      >
+        {/* ✅ Left Side (Logo) */}
         <div className="flex-shrink-0">
-          <Link href="/">
+          <Link href="/" aria-label="Go to MxD Home">
             <Image
               src="/assets/logo.avif"
-              alt="Creative Agency"
+              alt="MxD Creative Agency - Branding & Marketing Experts"
               width={156}
               height={50}
               priority
@@ -28,15 +31,19 @@ export default function CreativeAgencySection() {
           </Link>
         </div>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-10 pt-2">
+        {/* ✅ Desktop Navigation */}
+        <nav
+          role="navigation"
+          aria-label="Main Navigation"
+          className="hidden md:flex items-center gap-10 pt-2"
+        >
           <ServiceListWidget />
           <RoundedButton className="px-6 md:px-8 min-w-[160px]">
             Work With Us
           </RoundedButton>
         </nav>
 
-        {/* Mobile Navigation (Hamburger Menu) */}
+        {/* ✅ Mobile Navigation (Hamburger Menu) */}
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -48,13 +55,18 @@ export default function CreativeAgencySection() {
           </button>
         </div>
 
-        {/* Mobile Dropdown Menu */}
-        {isOpen && (
-          <div className="absolute top-[140px] right-6 bg-white shadow-lg rounded-lg p-4 w-48 flex flex-col space-y-4 animate-fadeIn">
-            <ServiceListWidget />
-            <RoundedButton>Work With Us</RoundedButton>
-          </div>
-        )}
+        {/* ✅ Mobile Dropdown Menu */}
+        <nav
+          role="navigation"
+          aria-label="Mobile Navigation"
+          className={`absolute top-[140px] right-6 bg-white shadow-lg rounded-lg p-4 w-48 flex flex-col space-y-4 animate-fadeIn ${
+            isOpen ? "block" : "hidden"
+          }`}
+          aria-hidden={!isOpen}
+        >
+          <ServiceListWidget />
+          <RoundedButton>Work With Us</RoundedButton>
+        </nav>
       </header>
     </div>
   );
