@@ -40,8 +40,9 @@ export default function CreativeAgencySection() {
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
+            aria-expanded={isOpen}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
             className="p-2"
-            aria-label="Toggle Menu"
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>

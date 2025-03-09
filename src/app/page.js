@@ -1,3 +1,4 @@
+import Head from "next/head";
 import ApproachSection from "@/sections/ApproachSection";
 import CarouselSection from "@/sections/CarouselSection";
 import ContactSection from "@/sections/ContactSection";
@@ -13,6 +14,14 @@ import "@/styles/globals.css";
 export default function Home() {
   return (
     <div className="bg-white">
+      <Head>
+        <title>Home | MxD</title>
+        <meta
+          name="description"
+          content="We are a creative agency offering top-notch marketing, design, and branding services."
+        />
+      </Head>
+
       <CreativeAgencySection />
       <HeroSection />
       <WhatWeDoSection />

@@ -62,7 +62,7 @@ const services = [
 
 const OurServicesSection = () => {
   return (
-    <div className="w-full py-16 px-6 lg:px-20 flex flex-col lg:flex-row items-center lg:items-start font-[Poppins] gap-10">
+    <div className="w-full py-16 px-6 lg:px-20 flex flex-col lg:flex-row items-center lg:items-start font-poppins gap-10">
       {/* Left Side: Title & Description */}
       <div className="lg:w-1/3 text-center lg:text-left">
         <h2 className="text-4xl font-semibold text-black mb-6">Our Services</h2>
@@ -86,7 +86,6 @@ const OurServicesSection = () => {
               textSize="text-sm md:text-base"
               width="w-[150px] md:w-[190px]"
               height="h-[41px]"
-              className="font-semibold"
             >
               {service.label}
             </RoundedButton>

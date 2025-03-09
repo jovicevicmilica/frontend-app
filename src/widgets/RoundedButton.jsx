@@ -1,3 +1,5 @@
+"use client";
+
 export default function RoundedButton({
   children,
   mt = "mt-0", // Default Tailwind class

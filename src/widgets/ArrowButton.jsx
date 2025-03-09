@@ -1,23 +1,22 @@
 "use client";
 
+import PropTypes from "prop-types";
+
 const ArrowButton = ({ onClick, direction }) => {
   const isLeft = direction === "left";
 
   return (
     <button
-      onClick={() => {
-        console.log(`${direction} arrow clicked`); // Debugging
-        onClick(); // Call the actual function
-      }}
-      className="focus:outline-none"
+      onClick={onClick}
+      className="p-2 focus:outline-none hover:scale-105 transition-transform cursor-pointer"
       aria-label={`Arrow ${direction}`}
     >
       <svg
-        xmlns="http://www.w3.org/2000/svg"
         width="50"
         height="50"
         viewBox="0 0 50 50"
         fill="none"
+        className="block"
       >
         <circle cx="25" cy="25" r="25" fill="black" />
         <path
@@ -31,6 +30,12 @@ const ArrowButton = ({ onClick, direction }) => {
       </svg>
     </button>
   );
+};
+
+// Prop validation
+ArrowButton.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  direction: PropTypes.oneOf(["left", "right"]).isRequired,
 };
 
 export default ArrowButton;

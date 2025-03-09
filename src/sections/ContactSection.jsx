@@ -52,8 +52,9 @@ export default function ContactSection({
       </div>
 
       {/* Right Side - Form Section */}
-      <div className="mt-10 md:mt-0 flex flex-col gap-5 w-full max-w-md mr-20 items-center">
+      <form className="mt-10 md:mt-0 flex flex-col gap-5 w-full max-w-md mr-20 items-center">
         <input
+          id="name"
           type="text"
           name="name"
           placeholder="Name"
@@ -64,6 +65,7 @@ export default function ContactSection({
           }`}
         />
         <input
+          id="email"
           type="email"
           name="email"
           placeholder="Email"
@@ -81,7 +83,7 @@ export default function ContactSection({
         >
           Let’s Chat
         </RoundedButton>
-      </div>
+      </form>
     </section>
   );
 }

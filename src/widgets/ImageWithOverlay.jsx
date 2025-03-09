@@ -18,11 +18,11 @@ export default function ImageWithOverlay({
       >
         <Image
           src={bgSrc}
-          alt="" // Decorative image (aria-hidden)
+          aria-hidden="true"
+          alt=""
           width={700}
           height={350}
           className="w-full h-full object-cover rounded-2xl filter grayscale"
-          aria-hidden="true"
         />
       </div>
 

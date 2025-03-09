@@ -3,15 +3,11 @@ export default function ImageWithBackground({
   imgSrc,
   alt,
   position, // Controls the background image positioning
-  imgPosition, // Controls the second image positioning (optional)
-  justifyContent,
+  imgPosition = "", // Controls the second image positioning (optional)
+  justifyContent = "center",
 }) {
   return (
-    <div
-      className={`relative flex ${
-        justifyContent ? `justify-${justifyContent}` : ""
-      }`}
-    >
+    <div className={`relative flex justify-${justifyContent}`}>
       {/* Background Image */}
       <img
         src={bgSrc}

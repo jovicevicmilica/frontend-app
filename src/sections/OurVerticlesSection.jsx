@@ -73,10 +73,12 @@ const OurVerticlesSection = () => {
             <ArrowButton
               direction="left"
               onClick={() => sliderRef.current?.slickPrev()}
+              aria-label="Slide left"
             />
             <ArrowButton
               direction="right"
               onClick={() => sliderRef.current?.slickNext()}
+              aria-label="Slide right"
             />
           </div>
         </div>
@@ -116,6 +118,7 @@ const OurVerticlesSection = () => {
                 width={500}
                 height={215}
                 className="w-full h-[215px] object-cover"
+                loading="lazy"
               />
               <div
                 className={`w-full h-[170px] ${item.bgColor} ${item.textColor} p-7 flex flex-col justify-between`}

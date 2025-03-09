@@ -1,6 +1,5 @@
 "use client";
 
-import { Poppins } from "next/font/google";
 import Image from "next/image";
 import RoundedButton from "../widgets/RoundedButton";
 
@@ -15,7 +14,7 @@ const logos = [
 
 const CarouselSection = () => {
   return (
-    <div className="w-screen bg-white py-12 font-[Poppins] overflow-hidden">
+    <div className="w-screen bg-white py-12 overflow-hidden">
       <div className="mx-auto text-center w-full">
         <p className="text-xl font-semibold text-gray-800 mb-10 font-[Poppins]">
           We help businesses like yours grow revenue profitability
@@ -29,7 +28,6 @@ const CarouselSection = () => {
               display: "flex",
               animation: "loop-scroll 20s linear infinite",
               whiteSpace: "nowrap",
-              willChange: "transform",
             }}
           >
             {[...logos, ...logos].map((logo, index) => (

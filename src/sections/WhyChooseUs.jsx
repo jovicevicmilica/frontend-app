@@ -9,7 +9,7 @@ export default function WhyChooseUs() {
           src="/assets/whale.avif"
           alt="Background"
           fill
-          className="object-cover filter grayscale"
+          className="object-cover w-full h-full filter grayscale"
           priority
         />
       </div>
@@ -50,7 +50,7 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Vertical Timeline */}
-        <div className="w-1/4 flex justify-baseline relative">
+        <div className="w-1/4 flex justify-start relative">
           <div className="relative flex flex-col items-center h-full">
             {/* Connecting Line */}
             <div className="absolute w-[1px] bg-blue-500 top-2 h-[510px]" />
