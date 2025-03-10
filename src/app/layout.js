@@ -37,16 +37,13 @@ export const metadata = {
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: "no",
+  userScalable: "yes",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} font-sans bg-white text-gray-900`}>
-        {children}
-      </body>
+      <body className={`${poppins.variable} font-sans`}>{children}</body>
     </html>
   );
 }

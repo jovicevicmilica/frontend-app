@@ -10,16 +10,30 @@ export default function HeroSection() {
 
   return (
     <section className="relative flex flex-col items-center justify-center h-[600px] md:h-[600px] lg:h-[645px] cl:h-[730px] 2xl:h-[840px] p-4 sm:p-6 text-center">
-      {/* ✅ Background Image / Video */}
-      <div className="absolute inset-0 w-full h-full">
+      {/* ✅ Background Images (Separate for Mobile & Desktop) */}
+      <div className="absolute inset-0">
         {!isVideoOpen ? (
-          <Image
-            src="/assets/warehouse-bg.avif"
-            alt="Warehouse with high-tech logistics automation"
-            fill
-            className="object-cover w-full h-full"
-            loading="lazy"
-          />
+          <>
+            {/* 🌟 Mobile Background Image */}
+            <Image
+              src="/assets/warehouse-bg.avif"
+              alt="Warehouse (Mobile)"
+              fill
+              quality={30}
+              priority
+              className="object-cover h-[600px] w-[350px] max-md:block md:hidden" // Only on mobile
+            />
+
+            {/* 🖥️ Desktop Background Image */}
+            <Image
+              src="/assets/warehouse-bg.avif"
+              alt="Warehouse (Desktop)"
+              fill
+              quality={50}
+              priority
+              className="object-cover w-full h-full hidden md:block" // Only on desktop
+            />
+          </>
         ) : (
           <iframe
             src={`https://player.vimeo.com/video/${vimeoId}?autoplay=1&dnt=1`}
@@ -29,6 +43,7 @@ export default function HeroSection() {
             frameBorder="0"
             allow="autoplay; fullscreen; picture-in-picture"
             allowFullScreen
+            loading="lazy"
           ></iframe>
         )}
       </div>

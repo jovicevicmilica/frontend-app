@@ -18,10 +18,6 @@ export default function Home() {
       <Head>
         <title>Home | MxD</title>
         <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes"
-        />
-        <meta
           name="description"
           content="We are a creative agency offering top-notch marketing, design, and branding services."
         />

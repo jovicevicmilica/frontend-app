@@ -49,7 +49,6 @@ export default function ApproachSection() {
             <Image
               src="/assets/iceberg-refl.avif"
               alt="B2B marketing strategy iceberg showcasing deep data-driven insights"
-              layout="responsive"
               width={700}
               height={500}
               className="object-cover mix-blend-lighten w-full h-auto"
