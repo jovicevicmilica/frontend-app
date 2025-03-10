@@ -10,9 +10,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        poppins: ["var(--font-poppins)", ...fontFamily.sans], // ✅ Uses CSS variable
-      },
       colors: {
         primary: "#496BEF",
         secondary: "#181818",
@@ -23,5 +20,6 @@ module.exports = {
       },
     },
   },
+  purge: ["./pages/**/*.tsx", "./components/**/*.tsx"],
   plugins: [],
 };

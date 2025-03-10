@@ -19,9 +19,9 @@ export default function HeroSection() {
               src="/assets/warehouse-bg.avif"
               alt="Warehouse (Mobile)"
               fill
-              quality={30}
+              quality={70}
               priority
-              className="object-cover h-[600px] w-[350px] max-md:block md:hidden" // Only on mobile
+              className="object-cover w-full h-full max-md:block md:hidden" // Only on mobile
             />
 
             {/* 🖥️ Desktop Background Image */}
