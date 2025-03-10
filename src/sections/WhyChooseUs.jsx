@@ -1,10 +1,46 @@
+"use client";
+import { useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 export default function WhyChooseUs() {
+  const headingsRef = useRef([]); // Stores references to h3 elements
+  const [dotPositions, setDotPositions] = useState([]); // Stores Y-positions of dots
+
+  // ✅ Function to update dot positions based on h3 positions
+  const updateDotPositions = () => {
+    if (headingsRef.current.length > 0) {
+      const positions = headingsRef.current.map((h3) =>
+        h3
+          ? h3.getBoundingClientRect().top -
+            headingsRef.current[0].getBoundingClientRect().top
+          : 0
+      );
+      setDotPositions(positions);
+    }
+  };
+
+  // ✅ Run effect on mount and resize
+  useLayoutEffect(() => {
+    updateDotPositions(); // Initial calculation
+    window.addEventListener("resize", updateDotPositions);
+
+    // ✅ Observe changes in element size
+    const observer = new ResizeObserver(() => {
+      updateDotPositions();
+    });
+
+    headingsRef.current.forEach((h3) => h3 && observer.observe(h3));
+
+    return () => {
+      window.removeEventListener("resize", updateDotPositions);
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <section className="relative flex flex-col items-center py-30 text-white font-poppins overflow-hidden">
-      {/* ✅ Grayscale Background with Improved Alt Text */}
-      <div className="absolute inset-0">
+    <section className="relative flex flex-col items-center py-20 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-32 text-white font-poppins overflow-hidden">
+      {/* ✅ Fixed Grayscale Background */}
+      <div className="absolute inset-0 overflow-hidden">
         <Image
           src="/assets/whale.avif"
           alt="Grayscale background of a whale representing scalability and growth"
@@ -14,15 +50,15 @@ export default function WhyChooseUs() {
         />
       </div>
 
-      {/* ✅ Title with Proper `<h2>` Tag */}
-      <h2 className="relative text-5xl font-semibold text-center mb-15 z-10">
+      {/* ✅ Title */}
+      <h2 className="relative text-2xl sm:text-3xl md:text-3xl lg:text-4xl 2xl:text-5xl font-semibold text-center mb-3 z-10">
         Why Scaling Businesses Choose MxD
       </h2>
 
-      {/* ✅ Content Section */}
-      <div className="relative max-w-6xl w-full flex mt-16 z-10">
-        {/* ✅ Left Text Section with SEO Optimization */}
-        <div className="w-1/2 space-y-16 mr-20">
+      {/* ✅ Responsive Content Section */}
+      <div className="relative max-w-6xl w-full flex flex-col md:flex-row items-start mt-12 z-10">
+        {/* ✅ Left Text Section */}
+        <div className="w-full md:w-4/5 space-y-6 sm:space-y-10 md:space-y-12 md:pr-10 relative">
           {[
             {
               title: "Teams of Experts Under One Roof",
@@ -40,38 +76,56 @@ export default function WhyChooseUs() {
                 "We match our engagement and level of support to your business needs. Whether you’re just starting out or scaling quickly, we’re here to partner with you at every stage of your journey.",
             },
           ].map((item, index) => (
-            <div key={index} className="flex items-start relative">
-              <div>
-                <h3 className="text-3xl font-semibold mb-8">{item.title}</h3>
-                <p className="text-gray-300 mt-2">{item.description}</p>
-              </div>
+            <div key={index} className="flex flex-col relative">
+              {/* ✅ Horizontal Line Between Sections on Small Screens */}
+              {index > 0 && (
+                <div className="border-t-2 border-blue-500 w-full my-4 sm:my-6 md:hidden"></div>
+              )}
+
+              {/* ✅ Heading */}
+              <h3
+                ref={(el) => {
+                  if (el) {
+                    headingsRef.current[index] = el;
+                  }
+                }}
+                className="text-xl sm:text-2xl md:text-2xl lg:text-3xl 2xl:text-4xl font-semibold mb-3 sm:mb-4"
+              >
+                {item.title}
+              </h3>
+              <p className="text-gray-300 text-sm md:text-base xl:text-md 2xl:text-lg">
+                {item.description}
+              </p>
             </div>
           ))}
         </div>
 
-        {/* ✅ Vertical Timeline (Decorative, Not for Screen Readers) */}
-        <div className="w-1/4 flex justify-start relative">
-          <div className="relative flex flex-col items-center h-full">
-            {/* Connecting Line */}
+        {/* ✅ Fixed Vertical Timeline (Blue Line & Dots) */}
+        <div className="hidden md:flex flex-col items-center w-1/5 relative mt-2">
+          {/* ✅ Vertical Line */}
+          {dotPositions.length > 0 && (
             <div
-              className="absolute w-[1px] bg-blue-500 top-2 h-[420px]"
+              className="absolute w-[2px] bg-blue-500 top-0"
+              style={{
+                height: `${dotPositions[dotPositions.length - 1] + 10}px`, // Adjusted to +10px for better alignment
+              }}
               aria-hidden="true"
             />
+          )}
 
-            {/* Dots aligned with headings */}
-            {[0, 220, 420].map((top, index) => (
-              <div
-                key={index}
-                className="absolute w-4 h-4 bg-blue-500 rounded-full"
-                style={{ top: `${top}px` }}
-                aria-hidden="true"
-              />
-            ))}
-          </div>
+          {/* ✅ Dots Aligned with h3 Positions */}
+          {dotPositions.map((pos, index) => (
+            <div
+              key={index}
+              className="w-4 h-4 bg-blue-500 rounded-full absolute left-1/2 transform -translate-x-1/2"
+              style={{ top: `${pos}px` }}
+              aria-hidden="true"
+            />
+          ))}
         </div>
 
-        {/* Right Side Spacing */}
-        <div className="w-1/4" />
+        {/* ✅ Right Side (Empty for Layout Balance on Large Screens) */}
+        <div className="hidden md:block w-1/5" />
       </div>
     </section>
   );

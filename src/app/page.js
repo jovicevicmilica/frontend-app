@@ -28,13 +28,14 @@ export default function Home() {
       <WhyChooseUs />
       <CarouselSection />
       <OurServicesSection />
-      <OurVerticlesSection />
       <ContactSection
         bgColor="bg-[#181818]"
         textColor="text-white"
         showIcons={true}
       />
-      <FooterSection />
+      {/*
+      <OurVerticlesSection />
+      <FooterSection />*/}
     </div>
   );
 }

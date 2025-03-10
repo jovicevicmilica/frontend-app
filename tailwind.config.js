@@ -18,6 +18,9 @@ module.exports = {
         secondary: "#181818",
         darkOverlay: "rgba(0, 0, 0, 0.5)",
       },
+      screens: {
+        "3xl": "2559px", // Custom breakpoint
+      },
     },
   },
   plugins: [],

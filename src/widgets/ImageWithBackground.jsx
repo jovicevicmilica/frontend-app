@@ -4,34 +4,35 @@ export default function ImageWithBackground({
   bgSrc,
   imgSrc,
   alt,
-  position, // Controls the background image positioning
-  imgPosition = "", // Controls the second image positioning (optional)
+  position, // Background positioning
+  imgPosition = "", // Foreground positioning
   justifyContent = "center",
 }) {
   return (
-    <div className={`relative flex justify-${justifyContent}`}>
+    <div className={`relative flex justify-${justifyContent} w-full`}>
       {/* Background Image */}
       <div
-        className={`absolute ${position} rounded-2xl z-0 w-[450px] h-[330px]`}
+        className={`absolute ${position} rounded-2xl z-0 w-[80%] sm:w-[70%] md:w-[100%] lg:w-[80%] 2xl:w-[60%] h-[210px] sm:h-[300px] md:h-[300px] 2xl:h-[350px]`}
       >
         <Image
           src={bgSrc}
           alt="Background"
-          fill // Makes the image fill the parent div
+          fill
           className="object-cover rounded-2xl"
-          priority // Ensures it loads faster
+          loading="lazy"
         />
       </div>
 
-      {/* Foreground Image (with optional positioning) */}
+      {/* Foreground Image */}
       <div
-        className={`relative rounded-2xl shadow-lg z-10 w-[450px] h-[350px] ${imgPosition}`}
+        className={`relative rounded-2xl shadow-lg z-10 w-[80%] sm:w-[70%] md:w-[100%] lg:w-[80%] 2xl:w-[60%] h-[210px] sm:h-[300px] md:h-[300px] 2xl:h-[350px] ${imgPosition}`}
       >
         <Image
           src={imgSrc}
           alt={alt}
-          fill // Makes it responsive inside the parent div
+          fill
           className="object-cover rounded-2xl"
+          loading="lazy"
         />
       </div>
     </div>
