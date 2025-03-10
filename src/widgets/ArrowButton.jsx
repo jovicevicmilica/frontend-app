@@ -8,12 +8,12 @@ const ArrowButton = ({ onClick, direction }) => {
   return (
     <button
       onClick={onClick}
-      className="p-2 focus:outline-none hover:scale-105 transition-transform cursor-pointer"
+      className="p-2 focus:outline-none hover:scale-105 transition-transform cursor-pointer md:w-[60px] md:h-[60px] w-[50px] h-[50px] md:mb-5"
       aria-label={`Arrow ${direction}`}
     >
       <svg
-        width="50"
-        height="50"
+        width="100%"
+        height="100%"
         viewBox="0 0 50 50"
         fill="none"
         className="block"

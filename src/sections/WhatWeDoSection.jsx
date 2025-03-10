@@ -8,9 +8,9 @@ export default function WhatWeDoSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-3 mb-20 items-center">
         {/* Left: Text */}
         <div className="max-w-lg sm:max-w-[90%] mx-auto md:mx-0 text-center md:text-left">
-          <h3 className="text-base mt-5 md:text-lg lg:text-xl 2xl:text-2xl font-semibold text-gray-700 mb-3">
+          <h1 className="text-base mt-5 md:text-lg lg:text-xl 2xl:text-2xl font-semibold text-gray-700 mb-3">
             What we do
-          </h3>
+          </h1>
           <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl 2xl:text-5xl font-bold text-black leading-tight mb-4">
             Data-Driven B2B Marketing from Strategy to Execution
           </h2>
@@ -57,9 +57,9 @@ export default function WhatWeDoSection() {
 
         {/* Right: Text */}
         <div className="text-center md:text-left mx-auto md:mx-0 sm:mt-3 lg:mt-5">
-          <h3 className="text-base mt-5 md:text-lg lg:text-xl 2xl:text-2xl font-semibold text-gray-700 mb-3 lg:mt-20 2xl:mt-30">
+          <h1 className="text-base mt-5 md:text-lg lg:text-xl 2xl:text-2xl font-semibold text-gray-700 mb-3 lg:mt-20 2xl:mt-30">
             Who we are
-          </h3>
+          </h1>
           <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl 2xl:text-5xl font-bold text-black leading-tight mb-4">
             Scale Quicker
           </h2>

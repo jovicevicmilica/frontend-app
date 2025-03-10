@@ -9,7 +9,7 @@ export default function HeroSection() {
   const vimeoId = "771577378"; // Your Vimeo Video ID
 
   return (
-    <section className="relative flex flex-col items-center justify-center h-[470px] md:h-[600px] lg:h-[645px] cl:h-[730px] 2xl:h-[840px] p-4 sm:p-6 text-center">
+    <section className="relative flex flex-col items-center justify-center h-[600px] md:h-[600px] lg:h-[645px] cl:h-[730px] 2xl:h-[840px] p-4 sm:p-6 text-center">
       {/* ✅ Background Image / Video */}
       <div className="absolute inset-0 w-full h-full">
         {!isVideoOpen ? (

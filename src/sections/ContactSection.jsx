@@ -15,13 +15,13 @@ export default function ContactSection({
       {/* ✅ Left Side - Text & Social Media (Mobile: Full Width, Desktop: Left Column) */}
       <div className="flex flex-col w-full md:w-1/2 items-center md:items-start text-center md:text-left">
         {/* ✅ Title (1st) */}
-        <h2
+        <h1
           className={`text-2xl sm:text-3xl md:text-3xl lg:text-4xl 2xl:text-5xl font-semibold mb-6 ${
             isDark ? "text-white" : textColor
           }`}
         >
           Get in touch with us
-        </h2>
+        </h1>
 
         {/* ✅ Paragraph (2nd) */}
         <p
@@ -72,6 +72,7 @@ export default function ContactSection({
 
       {/* ✅ Right Side - Form (Mobile: Comes Before Social Media, Desktop: Right Column) */}
       <form
+        role="form"
         className="w-full md:w-1/2 max-w-md flex flex-col gap-4 items-center self-center"
         aria-label="Contact Form"
       >

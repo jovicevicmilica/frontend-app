@@ -11,15 +11,22 @@ import WhatWeDoSection from "@/sections/WhatWeDoSection";
 import WhyChooseUs from "@/sections/WhyChooseUs";
 import "@/styles/globals.css";
 
-export const metadata = {
-  title: "Home | MxD",
-  description:
-    "We are a creative agency offering top-notch marketing, design, and branding services.",
-};
-
 export default function Home() {
   return (
     <div className="bg-white">
+      {/* Fix: Add viewport meta tag inside Head */}
+      <Head>
+        <title>Home | MxD</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes"
+        />
+        <meta
+          name="description"
+          content="We are a creative agency offering top-notch marketing, design, and branding services."
+        />
+      </Head>
+
       <CreativeAgencySection />
       <HeroSection />
       <WhatWeDoSection />
@@ -28,14 +35,13 @@ export default function Home() {
       <WhyChooseUs />
       <CarouselSection />
       <OurServicesSection />
+      <OurVerticlesSection />
       <ContactSection
         bgColor="bg-[#181818]"
         textColor="text-white"
         showIcons={true}
       />
-      {/*
-      <OurVerticlesSection />
-      <FooterSection />*/}
+      <FooterSection />
     </div>
   );
 }
