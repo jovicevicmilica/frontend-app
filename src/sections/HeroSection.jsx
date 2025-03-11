@@ -9,7 +9,7 @@ export default function HeroSection() {
   const vimeoId = "771577378"; // Your Vimeo Video ID
 
   return (
-    <section className="relative flex flex-col items-center justify-center h-[600px] md:h-[600px] lg:h-[645px] cl:h-[730px] 2xl:h-[840px] p-4 sm:p-6 text-center">
+    <section className="relative flex flex-col items-center justify-center h-[620px] md:h-[600px] lg:h-[645px] cl:h-[730px] 2xl:h-[840px] p-4 sm:p-6 text-center">
       {/* ✅ Background Images (Separate for Mobile & Desktop) */}
       <div className="absolute inset-0">
         {!isVideoOpen ? (
@@ -54,7 +54,7 @@ export default function HeroSection() {
           <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-normal mb-2 sm:mb-4">
             Powering 4 million businesses globally.
           </h1>
-          <p className="text-2xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl mb-6 sm:mb-10 font-normal">
+          <p className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl mb-6 sm:mb-10 font-normal">
             Ready for yours.
           </p>
 

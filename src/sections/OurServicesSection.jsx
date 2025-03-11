@@ -71,10 +71,10 @@ const services = [
 
 const OurServicesSection = () => {
   return (
-    <section className="w-full py-4 md:py-16 px-7 sm:px-12 md:px-16 lg:px-24 xl:px-32 flex flex-col lg:flex-row items-center lg:items-start font-poppins gap-10">
+    <section className="w-full py-4 md:py-16 px-7 sm:px-12 md:px-16 lg:px-24 xl:px-32 flex flex-col lg:flex-row items-center lg:items-start lg:justify-start font-poppins gap-10">
       {/* ✅ Left Side: Title & Description */}
       <div className="lg:w-1/3 text-center lg:text-left">
-        <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl 2xl:text-5xl sm:mt-10 md:mt-0a font-semibold text-black mb-6">
+        <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl 2xl:text-5xl sm:mt-10 md:mt-0 font-semibold text-black mb-6">
           Our Services
         </h1>
         <p className="text-gray-700 text-sm md:text-base xl:text-md 2xl:text-lg leading-relaxed">
@@ -100,7 +100,7 @@ const OurServicesSection = () => {
               <RoundedButton
                 bgColor={`${service.bgColor} ${service.hoverColor}`}
                 textColor={service.textColor}
-                textSize="text-[12px] sm:text-[13px] md:text-[15px] lg:text-base"
+                textSize="text-[12px] sm:text-[13px] md:text-[15px] lg:text-[14px] xl:text-base"
                 width={
                   index >= 3 && index <= 5
                     ? "w-[180px] md:w-[260px]" // ✅ Wider buttons in second row (lg)
