@@ -83,9 +83,9 @@ export default function ApproachSection() {
             {/* Blue Overlapping Container */}
             <div
               className="absolute top-1/2 left-1/2 transform -translate-x-1/3 lg:-translate-x-1/15 -translate-y-1/60 bg-[#496bef] text-white rounded-xl shadow-lg flex flex-col p-6 sm:p-8 md:p-8 
-lg:p-12 w-[80%] lg:w-[65%] 2xl:w-[65%] h-auto z-10 justify-between"
+lg:p-12 w-[80%] lg:w-[65%] 2xl:w-[65%] h-auto z-10 justify-between lg:gap-10"
             >
-              <p className="font-normal text-[10px] sm:text-base md:text-lg lg:text-lg xl:text-2xl text-left lg:leading-relaxed">
+              <p className="font-normal text-[10px] sm:text-base md:text-base lg:text-base xl:text-lg text-left lg:leading-relaxed">
                 Marketing in today's world is a science. We create your
                 personalized data center that allows you to understand how your
                 marketing efforts translate into revenue.

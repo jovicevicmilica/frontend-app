@@ -58,7 +58,7 @@ export default function WhyChooseUs() {
       {/* ✅ Responsive Content Section */}
       <div className="relative max-w-6xl w-full flex flex-col md:flex-row items-start mt-12 z-10">
         {/* ✅ Left Text Section */}
-        <div className="w-full md:w-4/5 space-y-6 sm:space-y-10 md:space-y-12 md:pr-10 relative">
+        <div className="w-full md:w-1/2 space-y-6 sm:space-y-10 md:space-y-12 md:pr-10 relative">
           {[
             {
               title: "Teams of Experts Under One Roof",
@@ -89,7 +89,7 @@ export default function WhyChooseUs() {
                     headingsRef.current[index] = el;
                   }
                 }}
-                className="text-xl sm:text-2xl md:text-2xl lg:text-3xl 2xl:text-4xl font-semibold mb-3 sm:mb-4"
+                className="text-xl sm:text-2xl md:text-2xl lg:text-3xl 2xl:text-4xl font-semibold mb-3 sm:mb-4 leading-normal"
               >
                 {item.title}
               </h3>
@@ -125,7 +125,7 @@ export default function WhyChooseUs() {
         </div>
 
         {/* ✅ Right Side (Empty for Layout Balance on Large Screens) */}
-        <div className="hidden md:block w-1/5" />
+        <div className="hidden md:block w-1/2" />
       </div>
     </section>
   );
